@@ -57,7 +57,7 @@ if uploaded_file:
         ["Histogram Equalization", "Interpolation+Bilinear", "SRCNN", "ESRGAN", "Codeformer"]
     )
 
-    if st.button("✨ Process Image"):
+    if st.button("Process Image"):
         # Process image based on selected method
         if sr_method == "Histogram Equalization":
             ycrcb = cv2.cvtColor(input_image_np, cv2.COLOR_RGB2YCrCb)
