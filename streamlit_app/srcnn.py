@@ -26,7 +26,7 @@ def SRCNN():
     return model
 
 #model and weights
-model_path = "../SRCNN/weights.h5"
+model_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "SRCNN", "weights.h5")
 srcnn_model = SRCNN()
 srcnn_model.load_weights(model_path)
 
