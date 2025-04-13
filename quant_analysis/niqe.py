@@ -21,6 +21,7 @@ def compute_niqe_scores(folder_path):
                 # Compute NIQE score
                 score = model(img)
                 print(f"Image: {img_path.name}, NIQE score: {score.item():.4f}")
+                # print(f"{score.item():.4f}")
             except Exception as e:
                 print(f"Error processing {img_path.name}: {str(e)}")
 
