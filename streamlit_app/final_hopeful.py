@@ -2,8 +2,13 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import os
-os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = str(2**40)
-import cv2
+try:
+    import cv2
+except ImportError:
+    # Try to install headless version
+    import subprocess
+    subprocess.check_call(["pip", "install", "opencv-python-headless"])
+    import cv2
 #import cv2
 from srcnn import process_srcnn
 # from skimage.metrics import structural_similarity as ssim # No longer needed

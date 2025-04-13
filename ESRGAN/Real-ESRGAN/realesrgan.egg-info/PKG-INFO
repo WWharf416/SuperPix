@@ -1,4 +1,4 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: realesrgan
 Version: 0.3.0
 Summary: Real-ESRGAN aims at developing Practical Algorithms for General Image Restoration
@@ -15,26 +15,6 @@ Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: basicsr>=1.4.2
-Requires-Dist: facexlib>=0.2.5
-Requires-Dist: gfpgan>=1.3.5
-Requires-Dist: numpy
-Requires-Dist: opencv-python
-Requires-Dist: Pillow
-Requires-Dist: torch>=1.7
-Requires-Dist: torchvision
-Requires-Dist: tqdm
-Dynamic: author
-Dynamic: author-email
-Dynamic: classifier
-Dynamic: description
-Dynamic: description-content-type
-Dynamic: home-page
-Dynamic: keywords
-Dynamic: license
-Dynamic: license-file
-Dynamic: requires-dist
-Dynamic: summary
 
 <p align="center">
   <img src="assets/realesrgan_logo.png" height=120>
