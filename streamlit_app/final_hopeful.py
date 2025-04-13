@@ -349,31 +349,25 @@ if uploaded_file:
                 output_image_bgr = upscale_nn_gaussian(input_image_bgr)
                 output_image_std = cv2.cvtColor(output_image_bgr, cv2.COLOR_BGR2RGB)
 
-
             elif sr_method == "Bicubic Interpolation + Bilinear Filter":
                 st.info("Processing using Bicubic + Bilinear Filtering...")
-                
+
                 def bilinear_filter(image):
-                    # Implement bilinear filtering
                     h, w = image.shape[:2]
-                    # First downscale slightly using bilinear interpolation
-                    temp = cv2.resize(image, (w//2, h//2), interpolation=cv2.INTER_LINEAR)
-                    # Then upscale back to original size using bilinear interpolation
+                    # Slight rescale for smoothing
+                    temp = cv2.resize(image, (int(w * 0.9), int(h * 0.9)), interpolation=cv2.INTER_LINEAR)
                     return cv2.resize(temp, (w, h), interpolation=cv2.INTER_LINEAR)
 
                 def upscale_bicubic_bilinear(img):
-                    # Upscale using bicubic interpolation
                     upscaled = cv2.resize(img, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
-                    # Apply bilinear filtering
                     return bilinear_filter(upscaled)
-                
+
                 output_image_bgr = upscale_bicubic_bilinear(input_image_bgr)
-                output_image_std = cv2.cvtColor(output_image_bgr, cv2.COLOR_BGR2RGB)  # Store in std output
+                output_image_std = cv2.cvtColor(output_image_bgr, cv2.COLOR_BGR2RGB)
 
             elif sr_method == "Lanczos + Guided + Sharpen":
                 st.info("Processing using Lanczos + Guided Filter + Sharpening...")
-                
-                # Check for opencv-contrib-python
+
                 try:
                     from cv2 import ximgproc
                 except ImportError:
