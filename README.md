@@ -12,6 +12,7 @@ SuperPix is an advanced image super-resolution application that enhances low-res
     - Standard upscaling without preprocessing
     - Histogram Equalization (HE) preprocessing for improved contrast
     - Contrast Limited Adaptive Histogram Equalization (CLAHE) for balanced enhancement
+  - Codeformer
   - Histogram Equalization (HE) for contrast enhancement
   - Interpolation with Bilinear filtering for smoother upscaling
 
